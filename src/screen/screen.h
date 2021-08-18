@@ -60,7 +60,7 @@ private:
 	// constants
 	// 0 represents the top-left screen element
 	const string::size_type TOP_LEFT = 0;
-	
+
 	// private member functions
 	string::size_type remainingSpace() const;
 	string::size_type row() const;
@@ -71,7 +71,7 @@ private:
 	// number of Screen rows
 	string::size_type height_;
 	// number of Screen columns
-	string::size_type width_;	
+	string::size_type width_;
 	// default position of the Screen's cursor, use in-class initilisation
 	string::size_type cursor_ = TOP_LEFT;
 	// the Screen's data is stored as a string
@@ -81,3 +81,19 @@ private:
 
 #endif
 
+// Exercise 4.2
+//Explanations of how const is used
+
+//const used in member functions: void display() const
+//A const data member functions never modifies data members in an object
+
+//const parameter:void set( const string& s )
+//The function can not modify the parameter is passed in
+
+//cons used in data member:const string::size_type TOP_LEFT = 0;
+//the variable is preset and cannot be changed throughout the class.
+
+//void reSize( string::size_type height, string::size_type width, char bkground = '#')
+//string::size_type depicts an unsigned integer type
+//Parameter height and width are of type unsigned int
+//This is good for information hiding in the class.
