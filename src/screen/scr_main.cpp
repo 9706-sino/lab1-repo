@@ -7,7 +7,9 @@ using namespace std;
 int main()
 {
 	auto myScreen = Screen{6,6};
-	myScreen.clear('#');
+	myScreen.clear(' ');
+	myScreen.set('*');
+	myScreen.move(Direction::FORWARD);
 	myScreen.set('*');
 	myScreen.forward();
 	myScreen.set('*');
@@ -17,10 +19,8 @@ int main()
 	myScreen.set('*');
 	myScreen.forward();
 	myScreen.set('*');
-	myScreen.forward();
-	myScreen.set('*');
-    myScreen.home();
-    myScreen.down();
+    myScreen.move(Direction::HOME);
+    myScreen.move(Direction::DOWN);
     myScreen.set('*');
     myScreen.down();
     myScreen.set('*');
@@ -46,7 +46,7 @@ int main()
     myScreen.set('*');
     myScreen.back();
     myScreen.set('*');
-    myScreen.back();
+    myScreen.move(Direction::BACK);
     myScreen.set('*');
     myScreen.back();
     myScreen.set('*');
