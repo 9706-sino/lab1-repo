@@ -222,6 +222,27 @@ string::size_type Screen::row() const
     return (cursor_ + width_)/width_;
 }
 
+void Screen::create_square(string::size_type row, string::size_type col, string::size_type length)
+{
+
+
+    range = checkRange (row, col);
+
+    if (range)
+    {
+        move(row, col);
+        for (string::size_type i = 1; i < 4*length; i++)
+        {
+            set('X');
+            if (i<length){down();}
+            else if(i>3*length && i<4*length){move(Direction::BACK);}
+            else if(i>2*length && i<3*length){move(Direction::UP);}
+            else if(i>length && i<2*length){move(Direction::FORWARD);}
+        }
+    }
+}
+
+
 //Exercise 4.3
 
 //The member function is a necessity for clients of Screen

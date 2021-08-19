@@ -52,6 +52,13 @@ int main()
     myScreen.set('*');
 	myScreen.display();
 
+	//Exercise 4.5
+	//outputting a square
+	myScreen.reSize(7,7);
+	myScreen.clear(' ');
+	myScreen.create_square(2,2,4);
+	myScreen.display();
+
 
 	return 0;
 }

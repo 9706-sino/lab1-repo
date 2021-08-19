@@ -57,6 +57,8 @@ public:
 	// check whether the specified co-ordinates lie within the screen
 	bool checkRange(string::size_type row, string::size_type col) const;
 
+	void create_square (string::size_type row, string::size_type col, string::size_type length);
+
 private:
 	// constants
 	// 0 represents the top-left screen element
@@ -77,6 +79,8 @@ private:
 	string::size_type cursor_ = TOP_LEFT;
 	// the Screen's data is stored as a string
 	string _screen;
+	bool range;
+
 };
 
 
